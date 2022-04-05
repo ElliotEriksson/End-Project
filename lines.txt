@@ -1,0 +1,1 @@
+['Grön', 'Gullmarsplan', '20000', 'Skanstull', '2000', 'Medborgarplatsen']
