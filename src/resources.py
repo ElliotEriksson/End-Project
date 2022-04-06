@@ -3,7 +3,8 @@
 # 2022-04-04
 # Resources for Train Calculator 
 
-from random import choice
+
+# Classes
 
 class Train:
 
@@ -32,7 +33,7 @@ class Train:
         return f"{self.name}/{self.acceleration}/{self.speed}/{self.retardation}"
 
 
-
+# Functions
 
 def create_train():
     """
@@ -63,15 +64,15 @@ def create_line():
         name = input("What is the name of the line? ")
         line.append(name)
         station_amount = int(input("How many stations are there? "))
-        x = 0
+        last = 0
         for i in range(station_amount):
             distance = ""
             station_name = input("What is the name of the station? ")
             line.append(station_name)
-            if x != station_amount - 1:
+            if last != station_amount - 1:
                 distance = input("How far is it to the next station (m)? ")
                 line.append(distance)
-            x += 1
+            last += 1
         lines.append(line)
     with open("lines.txt", "a", encoding="utf-8") as f:
         for list in lines:
@@ -84,7 +85,7 @@ def get_trains():
     number = 1
     with open("trains.txt", "r", encoding="utf-8") as f:
         for line in f.readlines():
-            print(f"({number}) {line}")
+            print(f"({number}) {line.split('/')}")
             number += 1
 
 
