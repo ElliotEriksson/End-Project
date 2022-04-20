@@ -1,1 +1,2 @@
-['Grön', 'Gullmarsplan', '20000', 'Skanstull', '2000', 'Medborgarplatsen']
+['Stockhollm - Uppsala', 'Stockholm C', '30000', 'Märsta', '12000', 'Knivsta', '17000', 'Uppsala C']
+['Gröna Linjen', 'Gullmarsplan', '1000', 'Skanstull', '800', 'Medborgarplatsen', '450', 'Slussen', '500', 'Gamla Stan', '1000', 'T-Centralen']
