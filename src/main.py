@@ -3,11 +3,16 @@
 # 2022-04-04
 # Main for Train Calculator
 
-import time
-from resources import Train, create_line, create_train, get_lines, get_trains
+import time, os, sys
+from resources import Train, create_line, create_train, get_lines, get_trains, end_program
 from math import sqrt
 
+
+
 def main():
+    list_total = []
+    total_time = 0
+    x = 1
     valid = False
     # Count to amount of lines in "lines.txt"
     with open("lines.txt", "r", encoding="utf-8") as f:
@@ -27,7 +32,7 @@ def main():
             create_line()    
 
         elif choice == "4":
-            choice = input("Do you want to (1) Compare 1 or more trains across a single line or (2) Compare 1 train across different lines? ")
+            choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
             print("-----[THE LINES]-----")
             get_lines()
             print()
@@ -37,7 +42,6 @@ def main():
                 # Comparing MULTIPLE trains across ONE line
                 if choice == "1":
                     names = []
-                    list_total = []
                     choice_line = int(input("Pick a line: ")) - 1
                     with open("lines.txt", "r", encoding="utf-8") as f:
                         for i, line in enumerate(f):
@@ -62,8 +66,6 @@ def main():
                         s1 = int((v**2)/(2*r))
 
                         # Calculating the time it takes and printing it out.
-                        x = 1
-                        total_sec = 0
                         print(eval(stats[0][1:]))
                         for i in range(int((len(stats)-2)/2)):
                             station = eval(stats[x])
@@ -75,9 +77,9 @@ def main():
                             elif s > s0:
                                 sec = v * (1/a + 1/r) + (s - s0 - s1)/v
                             print(f"{station}")
+                            time.sleep(1)
                             print(f"{round(sec)} seconds")
                             total_time += sec
-                            time.sleep(1)
                             list_total.append(round(total_time))
                         if count == choice_line:
                             print(eval(stats[x][:-1]))
@@ -86,19 +88,18 @@ def main():
                         print(f"It takes a total of {round(total_time)} seconds to travel across {eval(stats[0] [1:])} with the {attr[0]}.")
                         print("This does not include stoppage time at the stations")
                         print()
-                    
-                    # Printing out the fastest and slowest trains and the difference between them
-                    fastest = names[list_total.index(min(list_total))]
-                    slowest = names[list_total.index(max(list_total))]
+
+                    # Printing out the fastest and slowest trains and the difference between them            
                     if amount > 1:
+                        fastest = names[list_total.index(min(list_total))]
+                        slowest = names[list_total.index(max(list_total))]
                         print(f"{fastest} is the fastest and takes {min(list_total)} seconds.")
-                        print(f"{slowest} is the slowest and takes {max(list_total)} seconds")
-                        print(f"{fastest} is {max(list_total) - min(list_total)} seconds faster than {slowest}")
+                        print(f"{slowest} is the slowest and takes {max(list_total)} seconds.")
+                        print(f"{fastest} is {max(list_total) - min(list_total)} seconds faster than {slowest}.")
                     valid = True
 
                 # Comparing ONE train across MULTIPLE lines
                 elif choice == "2":
-                    list_total = []
                     # Choosing the train
                     choice_train = int(input("Pick your train: ")) - 1
                     with open("trains.txt", "r", encoding="utf-8") as f:
@@ -135,8 +136,6 @@ def main():
                                         lines[z].append(eval(stats[x][:-2]))
                             
                             # Calculating the time it takes and printing it out.
-                            x = 1
-                            total_time = 0
                             print(eval(lines[z][0]))
                             for i in range(int((len(lines[z])-2)/2)):
                                 station = (lines[z][x])
@@ -148,45 +147,37 @@ def main():
                                 elif s > s0:
                                     sec = v * (1/a + 1/r) + (s - s0 - s1)/v
                                 print(station)
+                                time.sleep(1)
                                 print(f"{round(sec)} seconds")
                                 total_time += sec
-                                time.sleep(1)
                             list_total.append(round(total_time))
                             print(lines[z][x])
                             print(f"It takes a total of {round(total_time)} seconds to travel across {eval(lines[z][0])} with the {attr[0]}.")
-                            print("This does not include stoppage time at the stations")
+                            print("This does not include stoppage time at the stations.")
                             print()
                             z += 1
 
-                    fastest = lines[list_total.index(min(list_total))][0]
-                    slowest = lines[list_total.index(max(list_total))][0]
+                    # Printing out the short and longest line and the difference between them.
                     if amount > 1:
-                        print(f"{fastest} is the fastest and takes {min(list_total)} seconds.")
-                        print(f"{slowest} is the slowest and takes {max(list_total)} seconds")
-                        print(f"{fastest} takes {max(list_total) - min(list_total)} seconds less than {slowest}")
+                        shortest = lines[list_total.index(min(list_total))][0]
+                        longest = lines[list_total.index(max(list_total))][0]
+                        print(f"{shortest} is the shortest and takes {min(list_total)} seconds.")
+                        print(f"{longest} is the longest and takes {max(list_total)} seconds.")
+                        print(f"{shortest} takes {max(list_total) - min(list_total)} seconds less than {longest}.")
                     valid = True
                     
                 else:
                     print(f"{choice} is not a acceptable answer.")
                     print()
 
-            choice = input("Do you want to restart the program (y/n)? ")
-            while not valid:
-                if choice == "y":
-                    main()
-                elif choice == "n":
-                    print("Thank you for using the program.")
-                    valid = True
-                else:
-                    print(f"{choice} is not an acceptable answer.")
-                    print()
+            end_program()
 
         elif choice == "5":
             print("Thank you for using the program.")
             valid = True
 
         else:
-            print(f"{choice} is not an answer. Try again")
+            print(f"{choice} is not an answer. Please try again.")
             print()
     
 if __name__ == "__main__":

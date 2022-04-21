@@ -3,6 +3,7 @@
 # 2022-04-04
 # Resources for Train Calculator 
 
+import sys, os
 
 # Classes
 
@@ -98,3 +99,16 @@ def get_lines():
         for line in f.readlines():
             print(f"({number}) {line}")
             number += 1
+
+def end_program():
+    valid = False
+    choice = input("Do you want to restart the program (y/n)? ")
+    while not valid:
+        if choice == "y":
+            os.execl(sys.executable, sys.executable, *sys.argv)
+        elif choice == "n":
+            print("Thank you for using the program.")
+            valid = True
+        else:
+            print(f"{choice} is not an acceptable answer.")
+            print()
