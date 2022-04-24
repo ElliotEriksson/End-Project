@@ -3,16 +3,29 @@
 # 2022-04-04
 # Main for Train Calculator
 
+
+
 import time, os, sys
-from resources import Train, create_line, create_train, get_lines, get_trains, end_program
+from resources import Train, create_line, create_train, get_lines, get_trains
 from math import sqrt
 
 
 
+def end_program():
+    valid = False
+    choice = input("Do you want to restart the program (y/n)? ")
+    while not valid:
+        if choice == "y":
+            main()
+        elif choice == "n":
+            print("Thank you for using the program.")
+            valid = True
+        else:
+            print(f"{choice} is not an acceptable answer.")
+            print()
+
 def main():
     list_total = []
-    total_time = 0
-    x = 1
     valid = False
     # Count to amount of lines in "lines.txt"
     with open("lines.txt", "r", encoding="utf-8") as f:
@@ -67,6 +80,8 @@ def main():
 
                         # Calculating the time it takes and printing it out.
                         print(eval(stats[0][1:]))
+                        x = 1
+                        total_time = 0
                         for i in range(int((len(stats)-2)/2)):
                             station = eval(stats[x])
                             x += 1
@@ -77,7 +92,7 @@ def main():
                             elif s > s0:
                                 sec = v * (1/a + 1/r) + (s - s0 - s1)/v
                             print(f"{station}")
-                            time.sleep(1)
+                            time.sleep(0.7)
                             print(f"{round(sec)} seconds")
                             total_time += sec
                             list_total.append(round(total_time))
@@ -137,6 +152,8 @@ def main():
                             
                             # Calculating the time it takes and printing it out.
                             print(eval(lines[z][0]))
+                            x = 1
+                            total_time = 0
                             for i in range(int((len(lines[z])-2)/2)):
                                 station = (lines[z][x])
                                 x += 1
@@ -147,7 +164,7 @@ def main():
                                 elif s > s0:
                                     sec = v * (1/a + 1/r) + (s - s0 - s1)/v
                                 print(station)
-                                time.sleep(1)
+                                time.sleep(.7)
                                 print(f"{round(sec)} seconds")
                                 total_time += sec
                             list_total.append(round(total_time))
@@ -164,6 +181,7 @@ def main():
                         print(f"{shortest} is the shortest and takes {min(list_total)} seconds.")
                         print(f"{longest} is the longest and takes {max(list_total)} seconds.")
                         print(f"{shortest} takes {max(list_total) - min(list_total)} seconds less than {longest}.")
+                        print()
                     valid = True
                     
                 else:
