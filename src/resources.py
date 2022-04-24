@@ -34,7 +34,6 @@ class Train:
 
 
 # Functions
-
 def create_train():
     """
     Function to create x amount of trains and save them into to the trains.txt file
@@ -85,7 +84,9 @@ def get_trains():
     number = 1
     with open("trains.txt", "r", encoding="utf-8") as f:
         for line in f.readlines():
+            line = line.strip()
             print(f"({number}) {line.split('/')}")
+            print()
             number += 1
 
 
