@@ -98,10 +98,7 @@ def main():
                             print(f"{round(sec)} seconds")
                             total_time += sec
                         list_total.append(round(total_time))
-                        if count == choice_line:
-                            print(eval(stats[x][:-1]))
-                        else:
-                            print(eval(stats[x][:-2]))                            
+                        print(eval(stats[x][:-2]))                            
                         print(f"It takes a total of {round(total_time)} seconds to travel across {eval(stats[0] [1:])} with the {attr[0]}.")
                         print("This does not include stoppage time at the stations.")
                         print()
@@ -148,11 +145,8 @@ def main():
                                     x = 1
                                     for i in range(int(len(stats)-2)):
                                         lines[z].append(eval(stats[x]))
-                                        x += 1
-                                    if count == choice_line:
-                                        lines[z].append(eval(stats[x][:-1]))
-                                    else:
-                                        lines[z].append(eval(stats[x][:-2]))
+                                        x += 1    
+                                    lines[z].append(eval(stats[x][:-2]))
                             
                             # Calculating the time it takes and printing it out.
                             loading()
