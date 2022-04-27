@@ -14,6 +14,10 @@ But it does not it include additional stoppage at the stations to pick up and dr
 Nor does it include potential extra weight of added carriages, luggage, passangers etc.
 The calculator is not live based and therefore cannot take potential traffic in to account.
 
+## Credits
+
+Sven Marnach (sven@marnach.net) on Stackoverflow for the loading function.
+
 ## Creator
 
 Elliot Eriksson (elliot@serait.se , github.com/ElliotEriksson/)

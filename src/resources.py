@@ -3,7 +3,7 @@
 # 2022-04-04
 # Resources for Train Calculator 
 
-
+import time, sys
 
 # Classes
 class Train:
@@ -30,6 +30,15 @@ class Train:
         return f"{self.name}/{self.acceleration}/{self.speed}/{self.retardation}"
 
 # Functions
+def loading():
+    """
+    Prints loading adding one dot every second
+    """
+    for i in range(4):
+        print("Loading" + "." * i)
+        sys.stdout.write("\033[F")
+        time.sleep(.5)
+
 def create_train():
     """
     Function to create x amount of trains and save them into to the trains.txt file.
@@ -47,6 +56,8 @@ def create_train():
     with open("trains.txt", "a", encoding="utf-8") as f:
         for list in trains:
             f.write('%s\n' % list)
+    loading()
+    print("SUCCESS!")
    
 def create_line():
     """
@@ -72,11 +83,14 @@ def create_line():
     with open("lines.txt", "a", encoding="utf-8") as f:
         for list in lines:
             f.write('%s\n' % list)
+    loading()
+    print("SUCCESS!")
 
 def get_trains():
     """
     Prints out all the trains from the trains.txt file with a number infront starting from 1.
     """
+    loading()
     number = 1
     with open("trains.txt", "r", encoding="utf-8") as f:
         for line in f.readlines():
@@ -85,11 +99,11 @@ def get_trains():
             print()
             number += 1
 
-
 def get_lines():
     """
     Prints out all the lines from the lines.txt file with a number infront starting from 1.
     """
+    loading()
     number = 1
     with open("lines.txt", "r", encoding="utf-8") as f:
         for line in f.readlines():

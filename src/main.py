@@ -6,7 +6,7 @@
 
 
 import time
-from resources import Train, create_line, create_train, get_lines, get_trains
+from resources import Train, create_line, create_train, get_lines, get_trains, loading
 from math import sqrt
 
 
@@ -80,6 +80,7 @@ def main():
                         s1 = int((v**2)/(2*r))
 
                         # Calculating the time it takes and printing it out.
+                        loading()
                         print(eval(stats[0][1:]))
                         x = 1
                         total_time = 0
@@ -123,12 +124,14 @@ def main():
                             if i == choice_train:
                                 attr = line.split("/")
                                 train = Train(attr[0], attr[1], attr[2], attr[3])
+
                     # Assigning values to the different units.
                     a = float(train.get_acceleration())
                     v = float(train.get_speed())
                     r = float(train.get_retardation())
                     s0 = int((v**2)/(2*a))
                     s1 = int((v**2)/(2*r))
+
                     # Choosing the different lines
                     amount = int(input("How many lines do you want to compare (1 if you just want to calculate for a single line)? "))
                     z = 0
@@ -152,6 +155,7 @@ def main():
                                         lines[z].append(eval(stats[x][:-2]))
                             
                             # Calculating the time it takes and printing it out.
+                            loading()
                             print(eval(lines[z][0]))
                             x = 1
                             total_time = 0
