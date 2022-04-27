@@ -5,7 +5,7 @@
 
 
 
-import time, os, sys
+import time
 from resources import Train, create_line, create_train, get_lines, get_trains
 from math import sqrt
 
@@ -45,13 +45,14 @@ def main():
             create_line()    
 
         elif choice == "4":
-            choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
             print("-----[THE LINES]-----")
             get_lines()
             print()
             print("-----[THE TRAINS]-----")
             get_trains()
             while not valid:
+                choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
+
                 # Comparing MULTIPLE trains across ONE line
                 if choice == "1":
                     names = []
@@ -70,8 +71,8 @@ def main():
                                 if i == choice_train:
                                     attr = line.split("/")
                                     train = Train(attr[0], attr[1], attr[2], attr[3])
-                                    names.append(attr[0])
                         # Assigning values to the different units
+                        names.append(train.get_name())
                         a = float(train.get_acceleration())
                         v = float(train.get_speed())
                         r = float(train.get_retardation())
@@ -95,7 +96,7 @@ def main():
                             time.sleep(0.7)
                             print(f"{round(sec)} seconds")
                             total_time += sec
-                            list_total.append(round(total_time))
+                        list_total.append(round(total_time))
                         if count == choice_line:
                             print(eval(stats[x][:-1]))
                         else:

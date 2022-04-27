@@ -32,7 +32,6 @@ class Train:
     def save_train(self):
         return f"{self.name}/{self.acceleration}/{self.speed}/{self.retardation}"
 
-
 # Functions
 def create_train():
     """
