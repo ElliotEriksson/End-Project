@@ -52,12 +52,11 @@ def create_train():
         dec = int(input("What is the trains retardation (m/s2)? "))
         all_stats = Train(name, acc, speed, dec)
         trains.append(all_stats.save_train())
-        print(trains)
     with open("trains.txt", "a", encoding="utf-8") as f:
         for list in trains:
             f.write('%s\n' % list)
     loading()
-    print("SUCCESS!")
+    print("SUCCESS!  ")
    
 def create_line():
     """
@@ -84,7 +83,7 @@ def create_line():
         for list in lines:
             f.write('%s\n' % list)
     loading()
-    print("SUCCESS!")
+    print("SUCCESS!  ")
 
 def get_trains():
     """

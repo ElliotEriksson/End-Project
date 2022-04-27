@@ -47,9 +47,9 @@ def main():
         elif choice == "4":
             print("-----[THE LINES]-----")
             get_lines()
-            print()
             print("-----[THE TRAINS]-----")
             get_trains()
+            
             while not valid:
                 choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
 
