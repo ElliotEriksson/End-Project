@@ -102,7 +102,7 @@ def main():
                         else:
                             print(eval(stats[x][:-2]))                            
                         print(f"It takes a total of {round(total_time)} seconds to travel across {eval(stats[0] [1:])} with the {attr[0]}.")
-                        print("This does not include stoppage time at the stations")
+                        print("This does not include stoppage time at the stations.")
                         print()
 
                     # Printing out the fastest and slowest trains and the difference between them            

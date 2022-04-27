@@ -25,10 +25,7 @@ class Train:
 
     def get_retardation(self):
         return self.retardation
-
-    def get_stats(self):
-        return self.name, self.acceleration, self.speed, self.retardation
-
+        
     def save_train(self):
         return f"{self.name}/{self.acceleration}/{self.speed}/{self.retardation}"
 
