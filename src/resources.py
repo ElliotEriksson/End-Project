@@ -32,7 +32,7 @@ class Train:
 # Functions
 def create_train():
     """
-    Function to create x amount of trains and save them into to the trains.txt file
+    Function to create x amount of trains and save them into to the trains.txt file.
     """
     trains = []
     amount = int(input("How many trains do you want to make? "))
@@ -50,7 +50,7 @@ def create_train():
    
 def create_line():
     """
-    Function to create x amount of lines and save them into to the lines.txt file
+    Function to create x amount of lines and save them into to the lines.txt file.
     """
     lines = []
     amount = int(input("How many train lines do you want to make? "))
@@ -75,7 +75,7 @@ def create_line():
 
 def get_trains():
     """
-    Prints out all the trains from the trains.txt file with a number infront starting from 1
+    Prints out all the trains from the trains.txt file with a number infront starting from 1.
     """
     number = 1
     with open("trains.txt", "r", encoding="utf-8") as f:
@@ -88,7 +88,7 @@ def get_trains():
 
 def get_lines():
     """
-    Prints out all the lines from the lines.txt file with a number infront starting from 1
+    Prints out all the lines from the lines.txt file with a number infront starting from 1.
     """
     number = 1
     with open("lines.txt", "r", encoding="utf-8") as f:

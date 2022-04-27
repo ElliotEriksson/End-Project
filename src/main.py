@@ -27,7 +27,7 @@ def end_program():
 def main():
     list_total = []
     valid = False
-    # Count to amount of lines in "lines.txt"
+    # Count to amount of lines in "lines.txt" used later on to determine where in the txt file the program is reading.
     with open("lines.txt", "r", encoding="utf-8") as f:
         for count, line in enumerate(f):
             pass
@@ -53,7 +53,7 @@ def main():
             while not valid:
                 choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
 
-                # Comparing MULTIPLE trains across ONE line
+                # Comparing MULTIPLE trains across ONE line.
                 if choice == "1":
                     names = []
                     choice_line = int(input("Pick a line: ")) - 1
@@ -71,7 +71,7 @@ def main():
                                 if i == choice_train:
                                     attr = line.split("/")
                                     train = Train(attr[0], attr[1], attr[2], attr[3])
-                        # Assigning values to the different units
+                        # Assigning values to the different units.
                         names.append(train.get_name())
                         a = float(train.get_acceleration())
                         v = float(train.get_speed())
@@ -105,7 +105,7 @@ def main():
                         print("This does not include stoppage time at the stations.")
                         print()
 
-                    # Printing out the fastest and slowest trains and the difference between them            
+                    # Printing out the fastest and slowest trains and the difference between them.
                     if amount > 1:
                         fastest = names[list_total.index(min(list_total))]
                         slowest = names[list_total.index(max(list_total))]
@@ -114,7 +114,7 @@ def main():
                         print(f"{fastest} is {max(list_total) - min(list_total)} seconds faster than {slowest}.")
                     valid = True
 
-                # Comparing ONE train across MULTIPLE lines
+                # Comparing ONE train across MULTIPLE lines.
                 elif choice == "2":
                     # Choosing the train
                     choice_train = int(input("Pick your train: ")) - 1
@@ -123,7 +123,7 @@ def main():
                             if i == choice_train:
                                 attr = line.split("/")
                                 train = Train(attr[0], attr[1], attr[2], attr[3])
-                    # Assigning values to the different units
+                    # Assigning values to the different units.
                     a = float(train.get_acceleration())
                     v = float(train.get_speed())
                     r = float(train.get_retardation())
