@@ -11,19 +11,6 @@ from math import sqrt
 
 
 
-def end_program():
-    valid = False
-    choice = input("Do you want to restart the program (y/n)? ")
-    while not valid:
-        if choice == "y":
-            main()
-        elif choice == "n":
-            print("Thank you for using the program.")
-            valid = True
-        else:
-            print(f"{choice} is not an acceptable answer.")
-            print()
-
 def main():
     list_total = []
     valid = False
@@ -56,11 +43,14 @@ def main():
                 # Comparing MULTIPLE trains across ONE line.
                 if choice == "1":
                     names = []
+                    # Choosing the line
                     choice_line = int(input("Pick a line: ")) - 1
                     with open("lines.txt", "r", encoding="utf-8") as f:
                         for i, line in enumerate(f):
                             if i == choice_line:
                                 stats = line.split(",")
+
+                    # Choosing the train(s)
                     amount = int(input("How many trains do you want to compare (1 if you just want to calculate for a single train)? "))
                     train_number = 1
                     for i in range(amount):
@@ -121,7 +111,6 @@ def main():
                             if i == choice_train:
                                 attr = line.split("/")
                                 train = Train(attr[0], attr[1], attr[2], attr[3])
-
                     # Assigning values to the different units.
                     a = float(train.get_acceleration())
                     v = float(train.get_speed())
@@ -129,7 +118,7 @@ def main():
                     s0 = int((v**2)/(2*a))
                     s1 = int((v**2)/(2*r))
 
-                    # Choosing the different lines
+                    # Choosing the line(s)
                     amount = int(input("How many lines do you want to compare (1 if you just want to calculate for a single line)? "))
                     z = 0
                     line_number = 1
@@ -186,8 +175,19 @@ def main():
                 else:
                     print(f"{choice} is not a acceptable answer.")
                     print()
+                
+            valid = False
+            while not valid:
+                choice = input("Do you want to restart the program (y/n)? ")
+                if choice == "y" or "Y":
+                    main()
+                elif choice == "n" or "N":
+                    print("Thank you for using the program.")
+                    valid = True
+                else:
+                    print(f"{choice} is not an acceptable answer.")
+                    print()
 
-            end_program()
 
         elif choice == "5":
             print("Thank you for using the program.")
@@ -196,6 +196,6 @@ def main():
         else:
             print(f"{choice} is not an answer. Please try again.")
             print()
-    
+
 if __name__ == "__main__":
     main()
