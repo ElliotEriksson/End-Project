@@ -37,6 +37,7 @@ Do you want to
 (5) Exit the program
 
 4
+
 -----[THE LINES]-----
 
 (1) ['Stockholm - Uppsala', 'Stockholm C', '30000', 'Märsta', '12000', 'Knivsta', '17000', 'Uppsala C']
@@ -216,7 +217,7 @@ For bigger changes I wish for a issue to be open to dicuss said changes.
 
 Elliot Eriksson - @Okand#3437 elliot@serait.se
 
-https://github.com/ElliotEriksson/End-Project
+[Repository](https://github.com/ElliotEriksson/End-Project)
 
 ## Acknowledgements
 
