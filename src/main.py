@@ -74,7 +74,7 @@ def main():
                                                 names.append(train.get_name())
                                                 a = float(train.get_acceleration())
                                                 v = float(train.get_speed())
-                                                r = float(train.get_retardation())
+                                                r = float(train.get_deceleration())
                                                 s0 = int((v**2)/(2*a))
                                                 s1 = int((v**2)/(2*r))
 
@@ -139,7 +139,7 @@ def main():
                             # Assigning values to the different units.
                             a = float(train.get_acceleration())
                             v = float(train.get_speed())
-                            r = float(train.get_retardation())
+                            r = float(train.get_deceleration())
                             s0 = int((v**2)/(2*a))
                             s1 = int((v**2)/(2*r))
 

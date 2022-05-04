@@ -8,11 +8,20 @@ import time, sys
 # Classes
 class Train:
 
-    def __init__(self, name : str, accelaration : int, speed : int, retardation : int) -> None:
+    def __init__(self, name : str, accelaration : int, speed : int, deceleration : int) -> None:
+        """
+        The constructor for the train class.
+
+        Args:
+            name (str): The name of the train.
+            accelaration (int): The acceleration of the train.
+            speed (int): The top speed of the train.
+            deceleration (int): The deceleration of the train.
+        """
         self.name = name
         self.acceleration = accelaration
         self.speed = speed
-        self.retardation = retardation
+        self.deceleration = deceleration
 
     def get_name(self):
         return self.name
@@ -23,16 +32,17 @@ class Train:
     def get_speed(self):
         return self.speed
 
-    def get_retardation(self):
-        return self.retardation
+    def get_deceleration(self):
+        return self.deceleration
         
     def save_train(self):
-        return f"{self.name}/{self.acceleration}/{self.speed}/{self.retardation}"
+        return f"{self.name}/{self.acceleration}/{self.speed}/{self.deceleration}"
 
 # Functions
 def loading():
     """
-    Prints loading adding one dot every second
+    Prints out loading adding one dot every .5 seconds.
+    From Sven Marnach
     """
     for i in range(4):
         print("Loading" + "." * i)
@@ -41,7 +51,7 @@ def loading():
 
 def create_train():
     """
-    Function to create x amount of trains and save them into to the trains.txt file.
+    Create X amount of trains and append them to the trains.txt file.
     """
     trains = []
     amount = int(input("How many trains do you want to make? "))
@@ -49,7 +59,7 @@ def create_train():
         name = input("What is the name of the train? ")
         acc = int(input("What is the trains acceleration (m/s2)? "))
         speed = int(input("What is the trains top speed (m/s)? "))
-        dec = int(input("What is the trains retardation (m/s2)? "))
+        dec = int(input("What is the trains deceleration (m/s2)? "))
         all_stats = Train(name, acc, speed, dec)
         trains.append(all_stats.save_train())
     with open("trains.txt", "a", encoding="utf-8") as f:
@@ -60,7 +70,7 @@ def create_train():
    
 def create_line():
     """
-    Function to create x amount of lines and save them into to the lines.txt file.
+    Create X amount of lines and append them to the lines.txt file.
     """
     lines = []
     amount = int(input("How many train lines do you want to make? "))
@@ -87,7 +97,7 @@ def create_line():
 
 def get_trains():
     """
-    Prints out all the trains from the trains.txt file with a number infront starting from 1.
+    Prints all of the trains including their names and statistics.
     """
     loading()
     number = 1
@@ -100,7 +110,7 @@ def get_trains():
 
 def get_lines():
     """
-    Prints out all the lines from the lines.txt file with a number infront starting from 1.
+    Prints all of the lines including their names, stations and distances.
     """
     loading()
     number = 1
