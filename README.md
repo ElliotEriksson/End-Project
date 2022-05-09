@@ -56,7 +56,7 @@ How many trains do you want to compare (1 if you just want to calculate for a si
 
 (2) ['X55', '0.9', '56', '1.4']
 
-Train nr1: 1
+Train nr1: 2
 
 Gröna Linjen
 
