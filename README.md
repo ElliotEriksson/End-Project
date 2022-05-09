@@ -26,7 +26,7 @@ You also need to clone the repository do this by opening your cmd and typing "gi
 
 Do you want to
 
-(1) Create new lines
+(1) Create new lines  
 
 (2) Create new trains
 
@@ -38,23 +38,23 @@ Do you want to
 
 4
 
+Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? 1
+
 -----[THE LINES]-----
 
 (1) ['Stockholm - Uppsala', 'Stockholm C', '30000', 'Märsta', '12000', 'Knivsta', '17000', 'Uppsala C']
 
 (2) ['Gröna Linjen', 'Gullmarsplan', '1000', 'Skanstull', '800', 'Medborgarplatsen', '450', 'Slussen', '500', 'Gamla Stan', '1000', 'T-Centralen']
 
+Pick a line: 2
+
+How many trains do you want to compare (1 if you just want to calculate for a single train)? 2
+
 -----[THE TRAINS]-----
 
 (1) ['X2000', '0.8', '56', '1.2']
 
 (2) ['X55', '0.9', '56', '1.4']
-
-Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? 1
-
-Pick a line: 2
-
-How many trains do you want to compare (1 if you just want to calculate for a single train)? 2
 
 Train nr1: 1
 
@@ -85,7 +85,25 @@ T-Centralen
 It takes a total of 276 seconds to travel across Gröna Linjen with the X2000.
 This does not include stoppage time at the stations.
 
-Train nr2: 2
+-----[THE TRAINS]-----
+
+(1) ['X2000', '0.8', '56', '1.2']
+
+(2) ['X55', '0.9', '56', '1.4']
+
+Train nr2: 3
+
+3 is not an acceptable answer.
+
+Try again.
+
+-----[THE TRAINS]-----
+
+(1) ['X2000', '0.8', '56', '1.2']
+
+(2) ['X55', '0.9', '56', '1.4']
+
+Train nr2: 1
 
 Gröna Linjen
 
