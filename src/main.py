@@ -15,11 +15,11 @@ def main():
     valid = False
     list_total = []
     count_line = -1
+    count_train = -1
     # Counting the amount of trains / lines in the txt files.
     with open("lines.txt", "r", encoding="utf-8") as f:
         for line in f:
             count_line += 1
-    count_train = -1
     with open("trains.txt", "r", encoding="utf-8") as f:
         for line in f:
             count_train += 1
@@ -36,32 +36,31 @@ def main():
             create_train()  
 
         elif choice == "4":
-            print("-----[THE LINES]-----")
-            get_lines()
-            print("-----[THE TRAINS]-----")
-            get_trains()
-
             while not valid:
                 choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
-
+                
                 # Comparing MULTIPLE trains across ONE line.
                 if choice == "1":
                     names = []
                     # Choosing the line.
                     while not valid:
+                        print("-----[THE LINES]-----")
+                        get_lines()
                         choice_line = int(input("Pick a line: ")) - 1
                         if choice_line <= count_line:
                             with open("lines.txt", "r", encoding="utf-8") as f:
                                 for i, line in enumerate(f):
                                     if i == choice_line:
                                         stats = line.split(",")
+                            # Choosing the train(s)
                             while not valid:
-                                # Choosing the train(s).
                                 amount = int(input("How many trains do you want to compare (1 if you just want to calculate for a single train)? "))
                                 if amount - 1 <= count_train:
                                     train_number = 1
                                     for i in range(amount):
                                         while not valid:
+                                            print("-----[THE TRAINS]-----")
+                                            get_trains()
                                             choice_train = int(input(f"Train nr{train_number}: ")) - 1
                                             if choice_train <= count_train:
                                                 train_number += 1
@@ -127,8 +126,8 @@ def main():
                     
                 # Comparing ONE train across MULTIPLE lines.
                 elif choice == "2":
+                    # Choosing the train
                     while not valid:
-                        # Choosing the train
                         choice_train = int(input("Pick your train: ")) - 1
                         if choice_train <= count_train:
                             with open("trains.txt", "r", encoding="utf-8") as f:
@@ -143,8 +142,8 @@ def main():
                             s0 = int((v**2)/(2*a))
                             s1 = int((v**2)/(2*r))
 
+                            # Choosing the line(s)
                             while not valid:
-                                # Choosing the line(s)
                                 amount = int(input("How many lines do you want to compare (1 if you just want to calculate for a single line)? "))
                                 if amount - 1 <= count_line:
                                     z = 0
@@ -152,6 +151,8 @@ def main():
                                     lines = [[] for i in range(amount)]
                                     for i in range(amount):
                                         while not valid:
+                                            print("-----[THE LINES]-----")
+                                            get_lines()
                                             choice_line = int(input(f"Line nr{line_number}: ")) - 1
                                             if choice_line <= count_line:
                                                 line_number += 1
