@@ -3,7 +3,9 @@
 # 2022-04-04
 # Resources for Train Calculator 
 
-import time, sys
+from sys import stdout
+from time import sleep
+from rich.progress import Progress
 
 # Classes
 class Train:
@@ -39,6 +41,13 @@ class Train:
         return f"{self.name}/{self.acceleration}/{self.speed}/{self.deceleration}"
 
 # Functions
+def pro_bar():
+    with Progress() as progress:
+        task = progress.add_task("[red]Loading...", total=1000)
+        while not progress.finished:
+            progress.update(task, advance=10)
+            sleep(0.02)
+
 def loading():
     """
     Prints out loading adding one dot every .5 seconds.
@@ -46,8 +55,8 @@ def loading():
     """
     for i in range(4):
         print("Loading" + "." * i)
-        sys.stdout.write("\033[F")
-        time.sleep(.5)
+        stdout.write("\033[F")
+        sleep(.5)
 
 def create_train():
     """
@@ -65,7 +74,7 @@ def create_train():
     with open("trains.txt", "a", encoding="utf-8") as f:
         for list in trains:
             f.write('%s\n' % list)
-    loading()
+    pro_bar()
     print("SUCCESS!  ")
    
 def create_line():
@@ -92,14 +101,15 @@ def create_line():
     with open("lines.txt", "a", encoding="utf-8") as f:
         for list in lines:
             f.write('%s\n' % list)
-    loading()
+    pro_bar()
     print("SUCCESS!  ")
 
 def get_trains():
     """
     Prints all of the trains including their names and statistics.
     """
-    loading()
+    pro_bar()
+    print("-----[THE LINES]-----")
     number = 1
     with open("trains.txt", "r", encoding="utf-8") as f:
         for line in f.readlines():
@@ -112,7 +122,8 @@ def get_lines():
     """
     Prints all of the lines including their names, stations and distances.
     """
-    loading()
+    pro_bar()
+    print("-----[THE TRAINS]-----")
     number = 1
     with open("lines.txt", "r", encoding="utf-8") as f:
         for line in f.readlines():

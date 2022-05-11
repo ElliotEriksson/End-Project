@@ -3,12 +3,12 @@
 # 2022-04-04
 # Main for Train Calculator
 
-
-
-import time
-from resources import Train, create_line, create_train, get_lines, get_trains, loading
+from time import sleep
+from resources import Train, create_line, create_train, get_lines, get_trains
 from math import sqrt
-
+from rich.console import Console
+from rich.style import Style
+console = Console()
 
 
 def main():
@@ -27,14 +27,11 @@ def main():
         choice = input("Do you want to \n(1) Create new lines \n(2) Create new trains \n(3) Create new trains and lines \n(4) Calculate / Compare \n(5) Exit the program\n")
         if choice == "1":
             create_line()
-
         elif choice == "2":
             create_train()
-
         elif choice == "3":
             create_line()  
             create_train()  
-
         elif choice == "4":
             while not valid:
                 choice = input("Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? ")
@@ -44,7 +41,6 @@ def main():
                     names = []
                     # Choosing the line.
                     while not valid:
-                        print("-----[THE LINES]-----")
                         get_lines()
                         choice_line = int(input("Pick a line: ")) - 1
                         if choice_line <= count_line:
@@ -59,7 +55,6 @@ def main():
                                     train_number = 1
                                     for i in range(amount):
                                         while not valid:
-                                            print("-----[THE TRAINS]-----")
                                             get_trains()
                                             choice_train = int(input(f"Train nr{train_number}: ")) - 1
                                             if choice_train <= count_train:
@@ -78,7 +73,6 @@ def main():
                                                 s1 = int((v**2)/(2*r))
 
                                                 # Calculating the time it takes and printing it out.
-                                                loading()
                                                 print(eval(stats[0][1:]))
                                                 x = 1
                                                 total_time = 0
@@ -92,7 +86,7 @@ def main():
                                                     elif s > s0:
                                                         sec = v * (1/a + 1/r) + (s - s0 - s1)/v
                                                     print(f"{station}")
-                                                    time.sleep(0.7)
+                                                    sleep(0.7)
                                                     print(f"{round(sec)} seconds")
                                                     total_time += sec
                                                 list_total.append(round(total_time))
@@ -110,8 +104,8 @@ def main():
                                     if amount > 1:
                                         fastest = names[list_total.index(min(list_total))]
                                         slowest = names[list_total.index(max(list_total))]
-                                        print(f"{fastest} is the fastest and takes {min(list_total)} seconds.")
-                                        print(f"{slowest} is the slowest and takes {max(list_total)} seconds.")
+                                        console.print(f"{fastest} is the fastest and takes {min(list_total)} seconds.", style = Style(color="green"))
+                                        console.print(f"{slowest} is the slowest and takes {max(list_total)} seconds.", style = Style(color="red"))
                                         print(f"The fastest train ({fastest}) is {max(list_total) - min(list_total)} seconds faster than the slowest train ({slowest}).")
                                         print()
                                     valid = True
@@ -151,7 +145,6 @@ def main():
                                     lines = [[] for i in range(amount)]
                                     for i in range(amount):
                                         while not valid:
-                                            print("-----[THE LINES]-----")
                                             get_lines()
                                             choice_line = int(input(f"Line nr{line_number}: ")) - 1
                                             if choice_line <= count_line:
@@ -168,7 +161,6 @@ def main():
                                                             lines[z].append(eval(stats[x][:-2]))
                                                     
                                                     # Calculating the time it takes and printing it out.
-                                                    loading()
                                                     print(eval(lines[z][0]))
                                                     x = 1
                                                     total_time = 0
@@ -182,7 +174,7 @@ def main():
                                                         elif s > s0:
                                                             sec = v * (1/a + 1/r) + (s - s0 - s1)/v
                                                         print(station)
-                                                        time.sleep(.7)
+                                                        sleep(.7)
                                                         print(f"{round(sec)} seconds")
                                                         total_time += sec
                                                     list_total.append(round(total_time))
@@ -201,8 +193,8 @@ def main():
                                     if amount > 1:
                                         shortest = eval(lines[list_total.index(min(list_total))][0])
                                         longest = eval(lines[list_total.index(max(list_total))][0])
-                                        print(f"{shortest} is the shortest and takes {min(list_total)} seconds.")
-                                        print(f"{longest} is the longest and takes {max(list_total)} seconds.")
+                                        console.print(f"{shortest} is the shortest and takes {min(list_total)} seconds.", style = Style(color="green"))
+                                        console.print(f"{longest} is the longest and takes {max(list_total)} seconds.", style = Style(color="red"))
                                         print(f"The shortest line ({shortest}) takes {max(list_total) - min(list_total)} seconds less than the longest line ({longest}).")
                                         print()
                                     valid = True
