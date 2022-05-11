@@ -1,28 +1,31 @@
-# Train Calculator
+# <span style="color:Green;">**Train Calculator**</span>
 
-## Description
+## <span style="color:lime;">*Description*</span>
 
 The README is written in markdown and the program is written in python.
 
 The program is made to calculate the time it takes for a train to travel a cross a line of stations, including stopping at each station.
 It also compares the time with other trains or lines.
 
-## Languages
+## <span style="color:lime;">*Languages*</span>
 
 - Python
 - Markdown
 
-## Requirements
+## <span style="color:lime;">*Requirements*</span>
 
-- Python 3.7+
+- Python 3.10+
+- Rich library
 
-## Installation
+## <span style="color:lime;">*Installation*</span>
 
 This projekt is made and tested for python 3.10 +. To install python visit (https://www.python.org/downloads) for the latest version.
 
-You also need to clone the repository do this by opening your cmd and typing "git clone https://github.com/ElliotEriksson/End-Project".
+Before running the program you need to install the rich library you can do this by typing "pip install rich" in your cmd. 
 
-## Example
+You also need to clone the repository do this by opening your cmd and pasting in "git clone https://github.com/ElliotEriksson/End-Project".
+
+## <span style="color:lime;">*Example*</span>
 
 Do you want to
 
@@ -40,17 +43,21 @@ Do you want to
 
 Do you want to (1) Compare one or more trains across a single line or (2) Compare one train across multiple lines? 1
 
------[THE LINES]-----
+<span style="color:red">Loading. . .</span><span style="color:lime"> ---------------------------------------- </span> <span style="color:purple"> 100% </span> <span style="color:skyblue">0:00:00</span>
+
+-----[THE TRAINS]-----
 
 (1) ['Stockholm - Uppsala', 'Stockholm C', '30000', 'Märsta', '12000', 'Knivsta', '17000', 'Uppsala C']
 
 (2) ['Gröna Linjen', 'Gullmarsplan', '1000', 'Skanstull', '800', 'Medborgarplatsen', '450', 'Slussen', '500', 'Gamla Stan', '1000', 'T-Centralen']
 
-Pick a line: 2
+Pick a line: 1
 
 How many trains do you want to compare (1 if you just want to calculate for a single train)? 2
 
------[THE TRAINS]-----
+<span style="color:red">Loading. . .</span><span style="color:lime"> ---------------------------------------- </span> <span style="color:purple"> 100% </span> <span style="color:skyblue">0:00:00</span>
+
+-----[THE LINES]-----
 
 (1) ['X2000', '0.8', '56', '1.2']
 
@@ -58,46 +65,28 @@ How many trains do you want to compare (1 if you just want to calculate for a si
 
 Train nr1: 1
 
-Gröna Linjen
+Stockholm - Uppsala
 
-Gullmarsplan
+Stockholm C
 
-65 seconds
+594 seconds
 
-Skanstull
+Märsta
 
-58 seconds
+273 seconds
 
-Medborgarplatsen
+Knivsta
 
-43 seconds
+362 seconds
 
-Slussen
+Uppsala C
 
-46 seconds
-
-Gamla Stan
-
-65 seconds
-
-T-Centralen
-
-It takes a total of 276 seconds to travel across Gröna Linjen with the X2000.
+It takes a total of 1229 seconds to travel across Stockholm - Uppsala with the X2000.
 This does not include stoppage time at the stations.
 
------[THE TRAINS]-----
+<span style="color:red">Loading. . .</span><span style="color:lime"> ---------------------------------------- </span> <span style="color:purple"> 100% </span> <span style="color:skyblue">0:00:00</span>
 
-(1) ['X2000', '0.8', '56', '1.2']
-
-(2) ['X55', '0.9', '56', '1.4']
-
-Train nr2: 3
-
-3 is not an acceptable answer.
-
-Try again.
-
------[THE TRAINS]-----
+-----[THE LINES]-----
 
 (1) ['X2000', '0.8', '56', '1.2']
 
@@ -105,138 +94,129 @@ Try again.
 
 Train nr2: 2
 
-Gröna Linjen
+Stockholm - Uppsala
 
-Gullmarsplan
+Stockholm C
 
-60 seconds
+587 seconds
 
-Skanstull
+Märsta
 
-54 seconds
+265 seconds
 
-Medborgarplatsen
+Knivsta
 
-41 seconds
+355 seconds
 
-Slussen
+Uppsala C
 
-43 seconds
-
-Gamla Stan
-
-60 seconds
-
-T-Centralen
-
-It takes a total of 258 seconds to travel across Gröna Linjen with the X55.
+It takes a total of 1207 seconds to travel across Stockholm - Uppsala with the X55.
 This does not include stoppage time at the stations.
 
-X55 is the fastest and takes 258 seconds.
+<span style="color:lightgreen">X55 is the fastest and takes </span><span style="color:skyblue">1207</span> <span style="color:lightgreen">seconds.</span>
 
-X2000 is the slowest and takes 276 seconds.
+<span style="color:red">X2000 is the slowest and takes </span><span style="color:skyblue">1229 <span style="color:red">seconds.</span>
 
-The fastest train (X55) is 18 seconds faster than the slowest train (X2000).
+The fastest train (X55) is 22 seconds faster than the slowest train (X2000).
 
 Do you want to restart the program (y/n)? n
 
 Thank you for using the program.
 
-## To do/Roadmap (Att göra/Plan)
+## <span style="color:lime;">*Roadmap*</span>
 
 - [ ] Other Languages
 - [ ] GUI
 - [ ] More Trains
 - [ ] More Lines
 
-## Changelog
+## <span style="color:lime;">*Changelog*</span>
 
-### Version 0.1
+### <span style="color:skyblue">Version 0.1</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added file saving + loading for both trains and lines.
 - Added the Train class.
 - Added the calculations for stop and acceleration distance.
 
-### Version 1
+### <span style="color:skyblue">Version 1</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added the calculations for the time between stops.
 - Added the comparison of different trains across one line.
 
-#### Version 1.1
+#### <span style="color:skyblue">Version 1.1</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added the printing out of the values.
 - Added reruns for invalid choices.
 
-### Version 1.2
+### <span style="color:;">Version 1.2</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added comparison of one train across different lines.
 - Added a nicer looking print.
 
-### Version 1.3
+### <span style="color:skyblue">Version 1.3</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Bug Fixes.
 - Added end_program function.
 
-### Version 1.4
+### <span style="color:skyblue">Version 1.4</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Bug Fixes.
 - Added a nicer looking print.
 - Added README.
 
-#### Removed
+#### <span style="color:red;">Removed</span>
 
 - Removed end_program function.
 
-### Verion 1.5
+### <span style="color:skyblue">Verion 1.5</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Bug Fixes.
 - Added loading function.
 
-#### Removed
+#### <span style="color:red;">Removed</span>
 
 - Removed get_stats.
 
-### Version 1.6
+### <span style="color:skyblue">Version 1.6</span>
 
-#### Added / Changed
+#### <span style="color:lightgreen;">Added / Changed</span>
 
 - Bug Fixes.
 - Added while loops to rerun for invalid inputs.
 
-### Version 1.7
+### <span style="color:skyblue">Version 1.7</span>
 
+#### <span style="color:lightgreen;">Added / Changed</span>
+
+- Bug Fixes
 - Added more information to the README.
 
-## Contribution
+## <span style="color:lime;">*Contribution*</span>
 
 Because this project is assessed pull request wont be allowed. After the assessment has been made they will be allowed (June 2022).
 
 For bigger changes I wish for a issue to be open to dicuss said changes.
 
-## License
+## <span style="color:lime;">*License*</span>
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Contact
+## <span style="color:lime;">*Contact*</span>
 
-Elliot Eriksson - @Okand#3437 elliot@serait.se
+Elliot Eriksson - @Okand#3437, elliot@serait.se
 
 [Repository](https://github.com/ElliotEriksson/End-Project)
-
-## Acknowledgements
-
-- Sven Marnach (sven@marnach.net)
