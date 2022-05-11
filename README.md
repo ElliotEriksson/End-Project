@@ -154,7 +154,7 @@ Thank you for using the program.
 - Added the printing out of the values.
 - Added reruns for invalid choices.
 
-### <span style="color:;">Version 1.2</span>
+### <span style="color:skyblue;">Version 1.2</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
