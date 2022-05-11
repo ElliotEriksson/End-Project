@@ -19,9 +19,10 @@ It also compares the time with other trains or lines.
 
 ## <span style="color:lime;">*Installation*</span>
 
-This projekt is made and tested for python 3.10 +. To install python visit (https://www.python.org/downloads) for the latest version.
+This project is made and tested for python 3.10 +. To install python visit (https://www.python.org/downloads) for the latest version.
 
-Before running the program you need to install the rich library you can do this by typing "pip install rich" in your cmd. 
+Before running the program you need to install the rich library you can do this by typing "pip install rich" in your cmd.
+If you are having problems installing rich please refer to their [website](https://rich.readthedocs.io/en/stable/)
 
 You also need to clone the repository do this by opening your cmd and pasting in "git clone https://github.com/ElliotEriksson/End-Project".
 
