@@ -141,35 +141,35 @@ Thank you for using the program.
 - Added the Train class.
 - Added the calculations for stop and acceleration distance.
 
-### <span style="color:skyblue">Version 1</span>
+### <span style="color:skyblue">Version 0.2</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added the calculations for the time between stops.
 - Added the comparison of different trains across one line.
 
-#### <span style="color:skyblue">Version 1.1</span>
+#### <span style="color:skyblue">Version 1.0</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added the printing out of the values.
 - Added reruns for invalid choices.
 
-### <span style="color:skyblue;">Version 1.2</span>
+### <span style="color:skyblue;">Version 2.0</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
 - Added comparison of one train across different lines.
 - Added a nicer looking print.
 
-### <span style="color:skyblue">Version 1.3</span>
+### <span style="color:skyblue">Version 2.1</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
 - Bug Fixes.
 - Added end_program function.
 
-### <span style="color:skyblue">Version 1.4</span>
+### <span style="color:skyblue">Version 2.2</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
@@ -181,7 +181,7 @@ Thank you for using the program.
 
 - Removed end_program function.
 
-### <span style="color:skyblue">Verion 1.5</span>
+### <span style="color:skyblue">Verion 2.3</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
@@ -192,14 +192,14 @@ Thank you for using the program.
 
 - Removed get_stats.
 
-### <span style="color:skyblue">Version 1.6</span>
+### <span style="color:skyblue">Version 2.4</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
 - Bug Fixes.
 - Added while loops to rerun for invalid inputs.
 
-### <span style="color:skyblue">Version 1.7</span>
+### <span style="color:skyblue">Version 2.5</span>
 
 #### <span style="color:lightgreen;">Added / Changed</span>
 
