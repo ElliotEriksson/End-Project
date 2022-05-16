@@ -45,18 +45,9 @@ def pro_bar():
     with Progress() as progress:
         task = progress.add_task("[red]Loading...", total=1000)
         while not progress.finished:
-            progress.update(task, advance=10)
-            sleep(0.02)
+            progress.update(task, advance=20)
+            sleep(0.01)
 
-def loading():
-    """
-    Prints out loading adding one dot every .5 seconds.
-    From Sven Marnach
-    """
-    for i in range(4):
-        print("Loading" + "." * i)
-        stdout.write("\033[F")
-        sleep(.5)
 
 def create_train():
     """

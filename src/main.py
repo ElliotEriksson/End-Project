@@ -4,25 +4,26 @@
 # Main for Train Calculator
 
 from time import sleep
-from resources import Train, create_line, create_train, get_lines, get_trains
+from resources import Train, create_line, create_train, get_lines, get_trains, pro_bar
 from math import sqrt
 from rich.console import Console
 from rich.style import Style
 console = Console()
 
 
+count_line = -1
+count_train = -1
+# Counting the amount of trains / lines in the txt files.
+with open("lines.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        count_line += 1
+with open("trains.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        count_train += 1
+
 def main():
     valid = False
     list_total = []
-    count_line = -1
-    count_train = -1
-    # Counting the amount of trains / lines in the txt files.
-    with open("lines.txt", "r", encoding="utf-8") as f:
-        for line in f:
-            count_line += 1
-    with open("trains.txt", "r", encoding="utf-8") as f:
-        for line in f:
-            count_train += 1
     while not valid:
         choice = input("Do you want to \n(1) Create new lines \n(2) Create new trains \n(3) Create new trains and lines \n(4) Calculate / Compare \n(5) Exit the program\n")
         if choice == "1":
@@ -73,9 +74,10 @@ def main():
                                                 s1 = int((v**2)/(2*r))
 
                                                 # Calculating the time it takes and printing it out.
-                                                print(eval(stats[0][1:]))
                                                 x = 1
                                                 total_time = 0
+                                                pro_bar()
+                                                print(eval(stats[0][1:]))
                                                 for i in range(int((len(stats)-2)/2)):
                                                     station = eval(stats[x])
                                                     x += 1
@@ -102,6 +104,7 @@ def main():
 
                                     # Printing out the fastest and slowest trains and the difference between them.
                                     if amount > 1:
+                                        pro_bar()
                                         fastest = names[list_total.index(min(list_total))]
                                         slowest = names[list_total.index(max(list_total))]
                                         console.print(f"{fastest} is the fastest and takes {min(list_total)} seconds.", style = Style(color="green"))
@@ -161,9 +164,10 @@ def main():
                                                             lines[z].append(eval(stats[x][:-2]))
                                                     
                                                     # Calculating the time it takes and printing it out.
-                                                    print(eval(lines[z][0]))
                                                     x = 1
                                                     total_time = 0
+                                                    pro_bar()
+                                                    print(eval(lines[z][0]))
                                                     for i in range(int((len(lines[z])-2)/2)):
                                                         station = (lines[z][x])
                                                         x += 1
@@ -191,6 +195,7 @@ def main():
 
                                     # Printing out the short and longest line and the difference between them.
                                     if amount > 1:
+                                        pro_bar()
                                         shortest = eval(lines[list_total.index(min(list_total))][0])
                                         longest = eval(lines[list_total.index(max(list_total))][0])
                                         console.print(f"{shortest} is the shortest and takes {min(list_total)} seconds.", style = Style(color="green"))
