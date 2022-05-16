@@ -66,6 +66,8 @@ How many trains do you want to compare (1 if you just want to calculate for a si
 
 Train nr1: 1
 
+<span style="color:red">Loading. . .</span><span style="color:lime"> ---------------------------------------- </span> <span style="color:purple"> 100% </span> <span style="color:skyblue">0:00:00</span>s
+
 Stockholm - Uppsala
 
 Stockholm C
@@ -95,6 +97,8 @@ This does not include stoppage time at the stations.
 
 Train nr2: 2
 
+<span style="color:red">Loading. . .</span><span style="color:lime"> ---------------------------------------- </span> <span style="color:purple"> 100% </span> <span style="color:skyblue">0:00:00</span>
+
 Stockholm - Uppsala
 
 Stockholm C
@@ -113,6 +117,8 @@ Uppsala C
 
 It takes a total of 1207 seconds to travel across Stockholm - Uppsala with the X55.
 This does not include stoppage time at the stations.
+
+<span style="color:red">Loading. . .</span><span style="color:lime"> ---------------------------------------- </span> <span style="color:purple"> 100% </span> <span style="color:skyblue">0:00:00</span>
 
 <span style="color:lightgreen">X55 is the fastest and takes </span><span style="color:skyblue">1207</span> <span style="color:lightgreen">seconds.</span>
 
