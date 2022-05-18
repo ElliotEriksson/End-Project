@@ -25,6 +25,8 @@ Before running the program you need to install the rich library you can do this 
 If you are having problems installing rich please refer to their [website](https://rich.readthedocs.io/en/stable/)
 
 You also need to clone the repository do this by opening your cmd and pasting in "git clone https://github.com/ElliotEriksson/End-Project".
+![IMG1](https://user-images.githubusercontent.com/95761597/169048590-afd3d0cb-2b05-4301-a714-449565c2d5ab.png)
+![IMG2](https://user-images.githubusercontent.com/95761597/169048614-cb812714-d0e6-4209-9ef4-e3cce82e93eb.png)
 
 ## <span style="color:lime;">*Example*</span>
 
