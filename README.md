@@ -28,8 +28,8 @@ You also need to clone the repository do this by opening your cmd and pasting in
 
 ## <span style="color:lime;">*Example*</span>
 
-<img src="./imgs/IMG1.png">
-<img src="./imgs/IMG2.png">
+![IMG1](https://user-images.githubusercontent.com/95761597/169048590-afd3d0cb-2b05-4301-a714-449565c2d5ab.png)
+![IMG2](https://user-images.githubusercontent.com/95761597/169048614-cb812714-d0e6-4209-9ef4-e3cce82e93eb.png)
 
 ## <span style="color:lime;">*To do*</span>
 
