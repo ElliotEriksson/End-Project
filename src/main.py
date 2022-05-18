@@ -125,6 +125,7 @@ def main():
                 elif choice == "2":
                     # Choosing the train
                     while not valid:
+                        get_trains()
                         choice_train = int(input("Pick your train: ")) - 1
                         if choice_train <= count_train:
                             with open("trains.txt", "r", encoding="utf-8") as f:
