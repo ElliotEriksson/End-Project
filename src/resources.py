@@ -3,7 +3,6 @@
 # 2022-04-04
 # Resources for Train Calculator 
 
-from sys import stdout
 from time import sleep
 from rich.progress import Progress
 
