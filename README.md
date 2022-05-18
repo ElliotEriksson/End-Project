@@ -130,7 +130,7 @@ Do you want to restart the program (y/n)? n
 
 Thank you for using the program.
 
-## <span style="color:lime;">*Roadmap*</span>
+## <span style="color:lime;">*To do*</span>
 
 - [ ] Other Languages
 - [ ] GUI
