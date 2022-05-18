@@ -120,8 +120,7 @@ def main():
                         else:
                             print(f"{choice_line + 1} is not a valid answer")
                             print("Try again.")
-
-                    
+   
                 # Comparing ONE train across MULTIPLE lines.
                 elif choice == "2":
                     # Choosing the train
@@ -188,7 +187,7 @@ def main():
                                                     print("This does not include stoppage time at the stations.")
                                                     print()
                                                     z += 1
-                                                    if amount == line_number -1:
+                                                    if amount == line_number - 1:
                                                         valid = True
                                             else:
                                                 print(f"{choice_line + 1} is not a acceptable answer.")
@@ -199,8 +198,8 @@ def main():
                                         pro_bar()
                                         shortest = eval(lines[list_total.index(min(list_total))][0])
                                         longest = eval(lines[list_total.index(max(list_total))][0])
-                                        console.print(f"{shortest} is the shortest and takes {min(list_total)} seconds.", style = Style(color="green"))
-                                        console.print(f"{longest} is the longest and takes {max(list_total)} seconds.", style = Style(color="red"))
+                                        console.print(f"{shortest} is the shortest and takes {min(list_total)} seconds.", style=Style(color="green"))
+                                        console.print(f"{longest} is the longest and takes {max(list_total)} seconds.", style=Style(color="red"))
                                         print(f"The shortest line ({shortest}) takes {max(list_total) - min(list_total)} seconds less than the longest line ({longest}).")
                                         print()
                                     valid = True
@@ -227,7 +226,6 @@ def main():
                     print(f"{choice} is not an acceptable answer.")
                     print()
 
-
         elif choice == "5":
             print("Thank you for using the program.")
             quit()
@@ -235,6 +233,7 @@ def main():
         else:
             print(f"{choice} is not an answer. Please try again.")
             print()
+
 
 if __name__ == "__main__":
     main()
