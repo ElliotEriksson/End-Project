@@ -21,6 +21,7 @@ with open("trains.txt", "r", encoding="utf-8") as f:
     for line in f:
         count_train += 1
 
+
 def main():
     valid = False
     list_total = []
@@ -107,8 +108,8 @@ def main():
                                         pro_bar()
                                         fastest = names[list_total.index(min(list_total))]
                                         slowest = names[list_total.index(max(list_total))]
-                                        console.print(f"{fastest} is the fastest and takes {min(list_total)} seconds.", style = Style(color="green"))
-                                        console.print(f"{slowest} is the slowest and takes {max(list_total)} seconds.", style = Style(color="red"))
+                                        console.print(f"{fastest} is the fastest and takes {min(list_total)} seconds.", style=Style(color="green"))
+                                        console.print(f"{slowest} is the slowest and takes {max(list_total)} seconds.", style=Style(color="red"))
                                         print(f"The fastest train ({fastest}) is {max(list_total) - min(list_total)} seconds faster than the slowest train ({slowest}).")
                                         print()
                                     valid = True
